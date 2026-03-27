@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İngilizce Ders Planları 🌟</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sky:     #e0f2fe;
+  --grass:   #d1fae5;
+  --sun:     #fef9c3;
+  --pink:    #fce7f3;
+  --lav:     #ede9fe;
+
+  --blue:    #0ea5e9;
+  --green:   #10b981;
+  --yellow:  #f59e0b;
+  --coral:   #f43f5e;
+  --purple:  #8b5cf6;
+  --orange:  #f97316;
+
+  --dark:    #1e1b4b;
+  --muted:   #64748b;
+  --white:   #ffffff;
+  --radius:  22px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Figtree', sans-serif;
+  background: #fdf4ff;
+  color: var(--dark);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   ANIMATED BG BLOBS
+============================================================ */
+.blob-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: blobFloat 12s ease-in-out infinite alternate;
+}
+.blob-1 { width: 500px; height: 500px; background: #a5f3fc; top: -150px; left: -150px; animation-duration: 14s; }
+.blob-2 { width: 400px; height: 400px; background: #fbcfe8; top: 40%; right: -120px; animation-duration: 10s; animation-delay: -4s; }
+.blob-3 { width: 350px; height: 350px; background: #d9f99d; bottom: -100px; left: 30%; animation-duration: 16s; animation-delay: -8s; }
+.blob-4 { width: 280px; height: 280px; background: #fde68a; top: 20%; left: 40%; animation-duration: 11s; animation-delay: -2s; }
+
+@keyframes blobFloat {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.1); }
+}
+
+/* ============================================================
+   LAYOUT WRAPPER
+============================================================ */
+.page { position: relative; z-index: 1; }
+
+/* ============================================================
+   HEADER
+============================================================ */
+.hero {
+  text-align: center;
+  padding: 56px 24px 48px;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 2px solid #e0e7ff;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(139,92,246,0.12);
+  animation: popIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275) both;
+}
+
+.hero-title {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(38px, 7vw, 72px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  animation: slideUp 0.6s cubic-bezier(0.175,0.885,0.32,1.275) 0.1s both;
+}
+
+.hero-title .line1 { display: block; color: var(--dark); }
+.hero-title .line2 {
+  display: block;
+  background: linear-gradient(120deg, var(--blue), var(--purple), var(--coral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 36px;
+  animation: slideUp 0.6s cubic-bezier(0.175,0.885,0.32,1.275) 0.2s both;
+}
+
+/* UNIT PILL NAV */
+.unit-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  animation: slideUp 0.6s cubic-bezier(0.175,0.885,0.32,1.275) 0.3s both;
+}
+
+.unit-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  color: white;
+  text-decoration: none;
+}
+.unit-pill:hover  { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.14); }
+.unit-pill:active { transform: translateY(0) scale(0.98); }
+
+.p1 { background: linear-gradient(135deg, #38bdf8, #0ea5e9); }
+.p2 { background: linear-gradient(135deg, #fb923c, #f97316); }
+.p3 { background: linear-gradient(135deg, #34d399, #10b981); }
+.p4 { background: linear-gradient(135deg, #f472b6, #ec4899); }
+.p5 { background: linear-gradient(135deg, #a78bfa, #8b5cf6); }
+.p6 { background: linear-gradient(135deg, #facc15, #f59e0b); color: #1e1b4b; }
+.p7 { background: linear-gradient(135deg, #f87171, #ef4444); }
+.p8 { background: linear-gradient(135deg, #4ade80, #22c55e); }
+
+/* SEARCH */
+.search-wrap {
+  max-width: 480px;
+  margin: 0 auto 56px;
+  position: relative;
+  animation: slideUp 0.6s cubic-bezier(0.175,0.885,0.32,1.275) 0.35s both;
+}
+.search-wrap input {
+  width: 100%;
+  padding: 16px 20px 16px 52px;
+  border-radius: 50px;
+  border: 3px solid white;
+  background: white;
+  font-family: 'Figtree', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+  outline: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.10);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-wrap input:focus {
+  border-color: var(--purple);
+  box-shadow: 0 8px 30px rgba(139,92,246,0.2);
+}
+.search-wrap .si {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  pointer-events: none;
+}
+
+/* ============================================================
+   UNITS
+============================================================ */
+.units-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.unit-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.unit-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* UNIT HEADER STRIP */
+.unit-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 32px;
+  padding: 20px 28px;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+}
+.unit-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    white 10px,
+    white 12px
+  );
+}
+
+.uh1 { background: linear-gradient(120deg, #38bdf8, #0ea5e9); }
+.uh2 { background: linear-gradient(120deg, #fb923c, #f97316); }
+.uh3 { background: linear-gradient(120deg, #34d399, #10b981); }
+.uh4 { background: linear-gradient(120deg, #f472b6, #ec4899); }
+.uh5 { background: linear-gradient(120deg, #a78bfa, #8b5cf6); }
+.uh6 { background: linear-gradient(120deg, #facc15, #f59e0b); }
+.uh7 { background: linear-gradient(120deg, #f87171, #ef4444); }
+.uh8 { background: linear-gradient(120deg, #4ade80, #22c55e); }
+
+.unit-emoji-big {
+  font-size: 52px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  flex-shrink: 0;
+  animation: wiggle 3s ease-in-out infinite;
+}
+@keyframes wiggle {
+  0%,100% { transform: rotate(-4deg); }
+  50%      { transform: rotate(4deg); }
+}
+
+.unit-header-text { color: white; }
+.unit-no {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
+.unit-name {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.unit-desc {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* SECTION LABELS */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 16px;
+  margin-top: 28px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, currentColor, transparent);
+  opacity: 0.15;
+}
+
+/* OBJECTIVES */
+.obj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+}
+.obj-item {
+  background: white;
+  border-radius: 16px;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid var(--accent-color, var(--purple));
+  line-height: 1.5;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.obj-item:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.10); }
+
+/* ============================================================
+   FLIP CARDS
+============================================================ */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 14px;
+}
+
+.flip-card {
+  height: 100px;
+  perspective: 800px;
+  cursor: pointer;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.175,0.885,0.32,1.275);
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+.flip-front, .flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 8px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  text-align: center;
+}
+.flip-front {
+  background: white;
+  border: 2.5px solid #e0e7ff;
+}
+.flip-back { transform: rotateY(180deg); }
+
+.flip-en {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+.flip-pron {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 3px;
+  font-style: italic;
+}
+.flip-hint {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.flip-back .flip-tr {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  line-height: 1.2;
+}
+.flip-back .flip-emoji { font-size: 28px; margin-bottom: 6px; }
+
+/* Per-unit back colors */
+.u1 .flip-back { background: linear-gradient(135deg, #38bdf8, #0ea5e9); }
+.u2n .flip-back { background: linear-gradient(135deg, #fb923c, #f97316); }
+.u2c .flip-back { background: linear-gradient(135deg, #34d399, #10b981); }
+.u3 .flip-back { background: linear-gradient(135deg, #34d399, #10b981); }
+.u4 .flip-back { background: linear-gradient(135deg, #f472b6, #ec4899); }
+.u5 .flip-back { background: linear-gradient(135deg, #a78bfa, #8b5cf6); }
+.u6 .flip-back { background: linear-gradient(135deg, #facc15, #f59e0b); }
+.u7s .flip-back { background: linear-gradient(135deg, #f87171, #ef4444); }
+.u7p .flip-back { background: linear-gradient(135deg, #f43f5e, #be123c); }
+.u8 .flip-back { background: linear-gradient(135deg, #4ade80, #22c55e); }
+
+/* Flip tap hint */
+.flip-tap-hint {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* COLOR SWATCHES */
+.swatch-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.swatch-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border-radius: 50px;
+  padding: 6px 16px 6px 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 0.15s;
+}
+.swatch-item:hover { transform: scale(1.05); }
+.swatch-dot {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(0,0,0,0.10);
+  flex-shrink: 0;
+}
+
+/* SONGS */
+.songs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.song-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  border-radius: 16px;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--dark);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border: 2px solid #fef3c7;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+}
+.song-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(245,158,11,0.2);
+  border-color: var(--yellow);
+}
+.song-play {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(245,158,11,0.3);
+  transition: transform 0.15s;
+}
+.song-card:hover .song-play { transform: scale(1.1); }
+.song-info { overflow: hidden; }
+.song-num { font-size: 11px; font-weight: 700; color: var(--yellow); text-transform: uppercase; letter-spacing: 1px; }
+.song-url { font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* NOTE */
+.note-strip {
+  margin-top: 28px;
+  background: linear-gradient(120deg, #ecfdf5, #d1fae5);
+  border-radius: 16px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #065f46;
+  border-left: 4px solid #10b981;
+}
+.note-strip .note-icon { font-size: 24px; flex-shrink: 0; }
+
+/* HIDDEN */
+.unit-section.hidden { display: none; }
+
+/* NO RESULTS */
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--muted);
+  display: none;
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes popIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Stagger flip cards on section reveal */
+.unit-section.visible .flip-card {
+  animation: popIn 0.4s cubic-bezier(0.175,0.885,0.32,1.275) both;
+}
+.unit-section.visible .flip-card:nth-child(1)  { animation-delay: 0.05s; }
+.unit-section.visible .flip-card:nth-child(2)  { animation-delay: 0.10s; }
+.unit-section.visible .flip-card:nth-child(3)  { animation-delay: 0.15s; }
+.unit-section.visible .flip-card:nth-child(4)  { animation-delay: 0.20s; }
+.unit-section.visible .flip-card:nth-child(5)  { animation-delay: 0.25s; }
+.unit-section.visible .flip-card:nth-child(6)  { animation-delay: 0.30s; }
+.unit-section.visible .flip-card:nth-child(7)  { animation-delay: 0.35s; }
+.unit-section.visible .flip-card:nth-child(8)  { animation-delay: 0.40s; }
+.unit-section.visible .flip-card:nth-child(9)  { animation-delay: 0.45s; }
+.unit-section.visible .flip-card:nth-child(10) { animation-delay: 0.50s; }
+.unit-section.visible .flip-card:nth-child(n+11) { animation-delay: 0.55s; }
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 600px) {
+  .flip-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+  .unit-header { padding: 16px 18px; }
+  .unit-emoji-big { font-size: 38px; }
+}
+</style>
+</head>
+<body>
+
+<div class="blob-bg">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+
+<div class="page">
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="hero-badge">🏫 İzmir Buca Avukat İlhan Ege Anaokulu · 2025–2026</div>
+    <h1 class="hero-title">
+      <span class="line1">İngilizce</span>
+      <span class="line2">Ders Planları</span>
+    </h1>
+    <p class="hero-sub">8 ünite · Haftada 1 gün, 30 dakika · Kartlara tıklayarak çevir!</p>
+
+    <!-- UNIT QUICK NAV -->
+    <nav class="unit-nav">
+      <a href="#u1" class="unit-pill p1">👋 Greetings</a>
+      <a href="#u2" class="unit-pill p2">🎨 Numbers & Colors</a>
+      <a href="#u3" class="unit-pill p3">👨‍👩‍👧‍👦 Family</a>
+      <a href="#u4" class="unit-pill p4">🦁 Animals</a>
+      <a href="#u5" class="unit-pill p5">🫀 Body</a>
+      <a href="#u6" class="unit-pill p6">😊 Feelings</a>
+      <a href="#u7" class="unit-pill p7">⭐ Shapes</a>
+      <a href="#u8" class="unit-pill p8">🚗 Vehicles</a>
+    </nav>
+
+    <div class="search-wrap">
+      <span class="si">🔍</span>
+      <input type="text" id="searchInput" placeholder="Kelime veya ünite ara… (örn: cat, aile)" oninput="doSearch()">
+    </div>
+  </header>
+
+  <!-- ===== UNITS ===== -->
+  <main class="units-container" id="mainContainer">
+
+    <!-- ══════════════════════════════════════
+         UNIT 1 – GREETINGS
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u1" data-search="greetings selaşma tanışma hello hi good morning afternoon evening night bye merhaba selam günaydın akşam gece görüşürüz name isim how old yaş">
+      <div class="unit-header uh1">
+        <div class="unit-emoji-big">👋</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 1</div>
+          <div class="unit-name">Greetings</div>
+          <div class="unit-desc">Selamlaşma ve Tanışma</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#0ea5e9">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#0ea5e9">Selamlaşma ve tanışma ifadelerini kullanmak</div>
+        <div class="obj-item" style="--accent-color:#0ea5e9">What's your name? sorusuna cevap vermek</div>
+        <div class="obj-item" style="--accent-color:#0ea5e9">How are you? / How old are you? sorularını anlamak</div>
+        <div class="obj-item" style="--accent-color:#0ea5e9">I am 4 / 5 / 6 years old diyebilmek</div>
+      </div>
+
+      <div class="section-label" style="color:#0ea5e9">📖 Kelimeler <span style="font-size:13px;font-weight:500;color:#94a3b8">(kartlara tıkla!)</span></div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u1">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Hello!</span><span class="flip-hint">👆 çevir</span></div><div class="flip-back"><span class="flip-tr">Merhaba</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Hi!</span></div><div class="flip-back"><span class="flip-tr">Selam</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Good morning!</span></div><div class="flip-back"><span class="flip-tr">Günaydın</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Good afternoon!</span></div><div class="flip-back"><span class="flip-tr">İyi öğlenler</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Good evening!</span></div><div class="flip-back"><span class="flip-tr">İyi akşamlar</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Good night!</span></div><div class="flip-back"><span class="flip-tr">İyi geceler</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Good bye!</span></div><div class="flip-back"><span class="flip-tr">Görüşürüz</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">What's your name?</span></div><div class="flip-back"><span class="flip-tr">Adın ne?</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">My name is…</span></div><div class="flip-back"><span class="flip-tr">Benim adım…</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">How are you?</span></div><div class="flip-back"><span class="flip-tr">Nasılsın?</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">How old are you?</span></div><div class="flip-back"><span class="flip-tr">Kaç yaşındasın?</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">I am 6 years old</span></div><div class="flip-back"><span class="flip-tr">Ben 6 yaşındayım</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#0ea5e9">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/pqDEwPi7vxg" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/pqDEwPi7vxg</div></div></a>
+        <a class="song-card" href="https://youtu.be/-0o79IMmAYE" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/-0o79IMmAYE</div></div></a>
+        <a class="song-card" href="https://youtu.be/STMl4yjPpoM" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/STMl4yjPpoM</div></div></a>
+        <a class="song-card" href="https://youtu.be/SRyFiVeNjWs" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/SRyFiVeNjWs</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UNIT 2 – NUMBERS & COLORS
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u2" data-search="numbers colors sayılar renkler one two three four five six seven eight nine ten blue red yellow white black green orange pink brown purple mavi kırmızı sarı beyaz siyah yeşil turuncu pembe kahverengi mor zero">
+      <div class="unit-header uh2">
+        <div class="unit-emoji-big">🎨</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 2</div>
+          <div class="unit-name">Numbers & Colors</div>
+          <div class="unit-desc">Sayılar ve Renkler</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#f97316">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#f97316">1–10 sayılarını İngilizce söyleyip tanımak</div>
+        <div class="obj-item" style="--accent-color:#f97316">Temel renkleri İngilizce söyleyebilmek</div>
+        <div class="obj-item" style="--accent-color:#f97316">What's your favourite color? sorusuna cevap vermek</div>
+      </div>
+
+      <div class="section-label" style="color:#f97316">🔢 Sayılar</div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u2n">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">0 – Zero</span><span class="flip-pron">(ziro)</span></div><div class="flip-back"><span class="flip-emoji">0️⃣</span><span class="flip-tr">Sıfır</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">1 – One</span><span class="flip-pron">(van)</span></div><div class="flip-back"><span class="flip-emoji">1️⃣</span><span class="flip-tr">Bir</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">2 – Two</span><span class="flip-pron">(tu)</span></div><div class="flip-back"><span class="flip-emoji">2️⃣</span><span class="flip-tr">İki</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">3 – Three</span><span class="flip-pron">(tiri)</span></div><div class="flip-back"><span class="flip-emoji">3️⃣</span><span class="flip-tr">Üç</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">4 – Four</span><span class="flip-pron">(for)</span></div><div class="flip-back"><span class="flip-emoji">4️⃣</span><span class="flip-tr">Dört</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">5 – Five</span><span class="flip-pron">(fayf)</span></div><div class="flip-back"><span class="flip-emoji">5️⃣</span><span class="flip-tr">Beş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">6 – Six</span><span class="flip-pron">(siks)</span></div><div class="flip-back"><span class="flip-emoji">6️⃣</span><span class="flip-tr">Altı</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">7 – Seven</span><span class="flip-pron">(sevın)</span></div><div class="flip-back"><span class="flip-emoji">7️⃣</span><span class="flip-tr">Yedi</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">8 – Eight</span><span class="flip-pron">(eyt)</span></div><div class="flip-back"><span class="flip-emoji">8️⃣</span><span class="flip-tr">Sekiz</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">9 – Nine</span><span class="flip-pron">(nayn)</span></div><div class="flip-back"><span class="flip-emoji">9️⃣</span><span class="flip-tr">Dokuz</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">10 – Ten</span><span class="flip-pron">(ten)</span></div><div class="flip-back"><span class="flip-emoji">🔟</span><span class="flip-tr">On</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#f97316">🌈 Renkler</div>
+      <div class="swatch-grid">
+        <div class="swatch-item"><div class="swatch-dot" style="background:#3b82f6"></div>Blue – Mavi</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#ef4444"></div>Red – Kırmızı</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#eab308"></div>Yellow – Sarı</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#f0f0f0;border:2px solid #cbd5e1"></div>White – Beyaz</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#1e1b4b"></div>Black – Siyah</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#22c55e"></div>Green – Yeşil</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#f97316"></div>Orange – Turuncu</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#ec4899"></div>Pink – Pembe</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#92400e"></div>Brown – Kahverengi</div>
+        <div class="swatch-item"><div class="swatch-dot" style="background:#7c3aed"></div>Purple – Mor</div>
+      </div>
+
+      <div class="section-label" style="color:#f97316">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/EvMPRnMHfx8" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/EvMPRnMHfx8</div></div></a>
+        <a class="song-card" href="https://youtu.be/ybt2jhCQ3lA" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/ybt2jhCQ3lA</div></div></a>
+        <a class="song-card" href="https://youtu.be/85M1yxIcHpw" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/85M1yxIcHpw</div></div></a>
+        <a class="song-card" href="https://youtu.be/xNw1SSz18Gg" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/xNw1SSz18Gg</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UNIT 3 – FAMILY
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u3" data-search="family aile mother father grandfather grandmother brother sister uncle aunt cousin anne baba dede babaanne anneanne erkek kız kardeş amca dayı teyze hala kuzen">
+      <div class="unit-header uh3">
+        <div class="unit-emoji-big">👨‍👩‍👧‍👦</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 3</div>
+          <div class="unit-name">Family</div>
+          <div class="unit-desc">Aile Bireyleri</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#10b981">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#10b981">Aile bireylerinin İngilizce isimlerini öğrenmek</div>
+        <div class="obj-item" style="--accent-color:#10b981">What's your sister's name? sorularına cevap vermek</div>
+      </div>
+
+      <div class="section-label" style="color:#10b981">📖 Kelimeler</div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u3">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Grandfather</span></div><div class="flip-back"><span class="flip-emoji">👴</span><span class="flip-tr">Dede</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Grandmother</span></div><div class="flip-back"><span class="flip-emoji">👵</span><span class="flip-tr">Babaanne / Anneanne</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Father</span></div><div class="flip-back"><span class="flip-emoji">👨</span><span class="flip-tr">Baba</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Mother</span></div><div class="flip-back"><span class="flip-emoji">👩</span><span class="flip-tr">Anne</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Brother</span></div><div class="flip-back"><span class="flip-emoji">👦</span><span class="flip-tr">Erkek kardeş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Sister</span></div><div class="flip-back"><span class="flip-emoji">👧</span><span class="flip-tr">Kız kardeş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Uncle</span></div><div class="flip-back"><span class="flip-emoji">🧔</span><span class="flip-tr">Amca / Dayı</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Aunt</span></div><div class="flip-back"><span class="flip-emoji">👩</span><span class="flip-tr">Teyze / Hala</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Cousin</span></div><div class="flip-back"><span class="flip-emoji">🧒</span><span class="flip-tr">Kuzen</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#10b981">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/yDua9ms9_eg" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/yDua9ms9_eg</div></div></a>
+        <a class="song-card" href="https://youtu.be/FXqPs1IvtNs" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/FXqPs1IvtNs</div></div></a>
+        <a class="song-card" href="https://youtu.be/G3v28DX-7Dk" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/G3v28DX-7Dk</div></div></a>
+        <a class="song-card" href="https://youtu.be/NVEzzzia8Yo" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/NVEzzzia8Yo</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UNIT 4 – ANIMALS
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u4" data-search="animals hayvanlar bee duck butterfly bird bear cow cat chicken crocodile dog dolphin elephant fish frog goat giraffe horse kangaroo lion mouse monkey octopus owl rabbit sheep snake tiger turtle zebra arı ördek kelebek kuş ayı inek kedi tavuk timsah köpek yunus fil balık kurbağa keçi zürafa at aslan fare maymun ahtapot baykuş tavşan koyun yılan kaplan kaplumbağa">
+      <div class="unit-header uh4">
+        <div class="unit-emoji-big">🦁</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 4</div>
+          <div class="unit-name">Animals</div>
+          <div class="unit-desc">Hayvanlar</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#ec4899">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#ec4899">Hayvan isimlerini İngilizce öğrenmek</div>
+        <div class="obj-item" style="--accent-color:#ec4899">What's your favourite animal? sorusuna cevap vermek</div>
+      </div>
+
+      <div class="section-label" style="color:#ec4899">📖 Kelimeler</div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u4">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Bee</span><span class="flip-pron">(bii)</span></div><div class="flip-back"><span class="flip-emoji">🐝</span><span class="flip-tr">Arı</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Duck</span></div><div class="flip-back"><span class="flip-emoji">🦆</span><span class="flip-tr">Ördek</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Butterfly</span><span class="flip-pron">(batırflay)</span></div><div class="flip-back"><span class="flip-emoji">🦋</span><span class="flip-tr">Kelebek</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Bird</span><span class="flip-pron">(börd)</span></div><div class="flip-back"><span class="flip-emoji">🐦</span><span class="flip-tr">Kuş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Bear</span><span class="flip-pron">(beyır)</span></div><div class="flip-back"><span class="flip-emoji">🐻</span><span class="flip-tr">Ayı</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Cow</span><span class="flip-pron">(kaav)</span></div><div class="flip-back"><span class="flip-emoji">🐄</span><span class="flip-tr">İnek</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Cat</span><span class="flip-pron">(ket)</span></div><div class="flip-back"><span class="flip-emoji">🐱</span><span class="flip-tr">Kedi</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Chicken</span><span class="flip-pron">(çikın)</span></div><div class="flip-back"><span class="flip-emoji">🐔</span><span class="flip-tr">Tavuk</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Crocodile</span><span class="flip-pron">(krokıdayl)</span></div><div class="flip-back"><span class="flip-emoji">🐊</span><span class="flip-tr">Timsah</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Dog</span></div><div class="flip-back"><span class="flip-emoji">🐶</span><span class="flip-tr">Köpek</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Dolphin</span><span class="flip-pron">(dolfin)</span></div><div class="flip-back"><span class="flip-emoji">🐬</span><span class="flip-tr">Yunus</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Elephant</span><span class="flip-pron">(elıfınt)</span></div><div class="flip-back"><span class="flip-emoji">🐘</span><span class="flip-tr">Fil</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Fish</span><span class="flip-pron">(fiş)</span></div><div class="flip-back"><span class="flip-emoji">🐟</span><span class="flip-tr">Balık</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Frog</span></div><div class="flip-back"><span class="flip-emoji">🐸</span><span class="flip-tr">Kurbağa</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Goat</span><span class="flip-pron">(gout)</span></div><div class="flip-back"><span class="flip-emoji">🐐</span><span class="flip-tr">Keçi</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Giraffe</span><span class="flip-pron">(cireef)</span></div><div class="flip-back"><span class="flip-emoji">🦒</span><span class="flip-tr">Zürafa</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Horse</span><span class="flip-pron">(hors)</span></div><div class="flip-back"><span class="flip-emoji">🐴</span><span class="flip-tr">At</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Kangaroo</span><span class="flip-pron">(kenguru)</span></div><div class="flip-back"><span class="flip-emoji">🦘</span><span class="flip-tr">Kanguru</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Koala</span><span class="flip-pron">(kuvola)</span></div><div class="flip-back"><span class="flip-emoji">🐨</span><span class="flip-tr">Koala</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Lion</span><span class="flip-pron">(layın)</span></div><div class="flip-back"><span class="flip-emoji">🦁</span><span class="flip-tr">Aslan</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Mouse</span><span class="flip-pron">(maus)</span></div><div class="flip-back"><span class="flip-emoji">🐭</span><span class="flip-tr">Fare</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Monkey</span><span class="flip-pron">(manki)</span></div><div class="flip-back"><span class="flip-emoji">🐒</span><span class="flip-tr">Maymun</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Octopus</span><span class="flip-pron">(oktıpus)</span></div><div class="flip-back"><span class="flip-emoji">🐙</span><span class="flip-tr">Ahtapot</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Owl</span><span class="flip-pron">(auul)</span></div><div class="flip-back"><span class="flip-emoji">🦉</span><span class="flip-tr">Baykuş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Rabbit</span><span class="flip-pron">(rebit)</span></div><div class="flip-back"><span class="flip-emoji">🐰</span><span class="flip-tr">Tavşan</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Rooster</span><span class="flip-pron">(ruustır)</span></div><div class="flip-back"><span class="flip-emoji">🐓</span><span class="flip-tr">Horoz</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Sheep</span><span class="flip-pron">(şiip)</span></div><div class="flip-back"><span class="flip-emoji">🐑</span><span class="flip-tr">Koyun</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Snake</span><span class="flip-pron">(sıneyk)</span></div><div class="flip-back"><span class="flip-emoji">🐍</span><span class="flip-tr">Yılan</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Tiger</span><span class="flip-pron">(taygır)</span></div><div class="flip-back"><span class="flip-emoji">🐯</span><span class="flip-tr">Kaplan</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Turtle</span><span class="flip-pron">(törtıl)</span></div><div class="flip-back"><span class="flip-emoji">🐢</span><span class="flip-tr">Kaplumbağa</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Zebra</span><span class="flip-pron">(zibra)</span></div><div class="flip-back"><span class="flip-emoji">🦓</span><span class="flip-tr">Zebra</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#ec4899">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/MCjhynvMunE" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/MCjhynvMunE</div></div></a>
+        <a class="song-card" href="https://youtu.be/ZK6NsTHa_Ec" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/ZK6NsTHa_Ec</div></div></a>
+        <a class="song-card" href="https://youtu.be/N4THWm9rxs4" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/N4THWm9rxs4</div></div></a>
+        <a class="song-card" href="https://youtu.be/_Wp0vZnR_FM" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/_Wp0vZnR_FM</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UNIT 5 – PARTS OF BODY
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u5" data-search="body vücut face head mouth nose eye ear cheek eyebrow forehead chin arm leg foot hand knee waist back palm elbow shoulder stomach chest neck finger toe yüz kafa ağız burun göz kulak yanak kaş alın çene kol bacak ayak el diz bel sırt avuç dirsek omuz karın göğüs boyun parmak">
+      <div class="unit-header uh5">
+        <div class="unit-emoji-big">🫀</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 5</div>
+          <div class="unit-name">Parts of Body</div>
+          <div class="unit-desc">Vücudumuzun Bölümleri</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#8b5cf6">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#8b5cf6">Vücudun bölümlerini İngilizce söyleyebilmek</div>
+        <div class="obj-item" style="--accent-color:#8b5cf6">Where is your nose/eye? sorularına cevap vermek</div>
+        <div class="obj-item" style="--accent-color:#8b5cf6">Touch your eyes komutlarını anlayıp uygulamak</div>
+      </div>
+
+      <div class="section-label" style="color:#8b5cf6">📖 Kelimeler</div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u5">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Face</span></div><div class="flip-back"><span class="flip-emoji">😊</span><span class="flip-tr">Yüz / Surat</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Head</span></div><div class="flip-back"><span class="flip-emoji">🗣️</span><span class="flip-tr">Kafa / Baş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Mouth</span></div><div class="flip-back"><span class="flip-emoji">👄</span><span class="flip-tr">Ağız</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Nose</span></div><div class="flip-back"><span class="flip-emoji">👃</span><span class="flip-tr">Burun</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Eye / Eyes</span></div><div class="flip-back"><span class="flip-emoji">👁️</span><span class="flip-tr">Göz / Gözler</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Ear / Ears</span></div><div class="flip-back"><span class="flip-emoji">👂</span><span class="flip-tr">Kulak / Kulaklar</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Cheek</span></div><div class="flip-back"><span class="flip-tr">Yanak</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Eyebrow</span></div><div class="flip-back"><span class="flip-tr">Kaş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Forehead</span></div><div class="flip-back"><span class="flip-tr">Alın</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Chin</span></div><div class="flip-back"><span class="flip-tr">Çene</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Arm / Arms</span></div><div class="flip-back"><span class="flip-emoji">💪</span><span class="flip-tr">Kol / Kollar</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Leg / Legs</span></div><div class="flip-back"><span class="flip-tr">Bacak / Bacaklar</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Foot / Feet</span></div><div class="flip-back"><span class="flip-emoji">🦶</span><span class="flip-tr">Ayak / Ayaklar</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Hand / Hands</span></div><div class="flip-back"><span class="flip-emoji">🖐️</span><span class="flip-tr">El / Eller</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Knee</span></div><div class="flip-back"><span class="flip-tr">Diz</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Waist</span></div><div class="flip-back"><span class="flip-tr">Bel</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Back</span></div><div class="flip-back"><span class="flip-tr">Sırt</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Palm</span></div><div class="flip-back"><span class="flip-tr">Avuç</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Elbow</span></div><div class="flip-back"><span class="flip-tr">Dirsek</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Shoulder</span></div><div class="flip-back"><span class="flip-tr">Omuz</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Stomach</span></div><div class="flip-back"><span class="flip-tr">Karın</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Chest</span></div><div class="flip-back"><span class="flip-tr">Göğüs</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Neck</span></div><div class="flip-back"><span class="flip-tr">Boyun</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Finger</span></div><div class="flip-back"><span class="flip-emoji">☝️</span><span class="flip-tr">Parmak</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Toe</span></div><div class="flip-back"><span class="flip-tr">Ayak parmağı</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#8b5cf6">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/SUt8q0EKbms" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/SUt8q0EKbms</div></div></a>
+        <a class="song-card" href="https://youtu.be/LgNcGJ_XYlw" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/LgNcGJ_XYlw</div></div></a>
+        <a class="song-card" href="https://youtu.be/ApoHRs-e6L4" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/ApoHRs-e6L4</div></div></a>
+        <a class="song-card" href="https://youtu.be/T5S8rO3AmWI" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/T5S8rO3AmWI</div></div></a>
+        <a class="song-card" href="https://youtu.be/E_VcSQn73do" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 5</div><div class="song-url">youtu.be/E_VcSQn73do</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UNIT 6 – FEELINGS
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u6" data-search="feelings duygular happy sad angry excited scared hungry thirsty sleepy surprised smile cry silly mutlu üzgün kızgın heyecanlı korkmuş acıkmış susamış uykulu şaşırmış">
+      <div class="unit-header uh6">
+        <div class="unit-emoji-big">😊</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 6</div>
+          <div class="unit-name">Feelings</div>
+          <div class="unit-desc">Duygular</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#d97706">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#d97706">Duygu ve hislerin İngilizce karşılıklarını öğrenmek</div>
+        <div class="obj-item" style="--accent-color:#d97706">How do you feel today? sorusuna cevap vermek</div>
+        <div class="obj-item" style="--accent-color:#d97706">I am happy / I am sad cümlelerini kurmak</div>
+      </div>
+
+      <div class="section-label" style="color:#d97706">📖 Kelimeler</div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u6">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Happy</span></div><div class="flip-back"><span class="flip-emoji">😄</span><span class="flip-tr">Mutlu</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Smile</span></div><div class="flip-back"><span class="flip-emoji">😊</span><span class="flip-tr">Gülmek</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Sad</span></div><div class="flip-back"><span class="flip-emoji">😢</span><span class="flip-tr">Üzgün</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Cry</span></div><div class="flip-back"><span class="flip-emoji">😭</span><span class="flip-tr">Ağlamak</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Angry</span></div><div class="flip-back"><span class="flip-emoji">😡</span><span class="flip-tr">Kızgın</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Excited</span></div><div class="flip-back"><span class="flip-emoji">🤩</span><span class="flip-tr">Heyecanlı</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Scared</span></div><div class="flip-back"><span class="flip-emoji">😨</span><span class="flip-tr">Korkmuş</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Silly</span></div><div class="flip-back"><span class="flip-emoji">😜</span><span class="flip-tr">Şımarık</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Hungry</span></div><div class="flip-back"><span class="flip-emoji">😋</span><span class="flip-tr">Acıkmış</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Thirsty</span></div><div class="flip-back"><span class="flip-emoji">🥤</span><span class="flip-tr">Susamış</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Sleepy</span></div><div class="flip-back"><span class="flip-emoji">😴</span><span class="flip-tr">Uykulu</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Surprised</span></div><div class="flip-back"><span class="flip-emoji">😲</span><span class="flip-tr">Şaşırmış</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#d97706">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/eMOnyPxE_w8" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/eMOnyPxE_w8</div></div></a>
+        <a class="song-card" href="https://youtu.be/lQZX1IIAnLw" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/lQZX1IIAnLw</div></div></a>
+        <a class="song-card" href="https://youtu.be/g04mcPQbm9E" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/g04mcPQbm9E</div></div></a>
+        <a class="song-card" href="https://youtu.be/teMU8dHLqSI" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/teMU8dHLqSI</div></div></a>
+        <a class="song-card" href="https://youtu.be/o5jZIswSfSE" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 5</div><div class="song-url">youtu.be/o5jZIswSfSE</div></div></a>
+        <a class="song-card" href="https://youtu.be/CTd-6oldmVM" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 6</div><div class="song-url">youtu.be/CTd-6oldmVM</div></div></a>
+        <a class="song-card" href="https://youtu.be/AmkGvZAPXtI" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 7</div><div class="song-url">youtu.be/AmkGvZAPXtI</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UNIT 7 – SHAPES & PREPOSITIONS
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u7" data-search="shapes prepositions şekiller edatlar square circle rectangle triangle star heart diamond in on under between kare daire dikdörtgen üçgen yıldız kalp içinde üzerinde altında arasında">
+      <div class="unit-header uh7">
+        <div class="unit-emoji-big">⭐</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 7</div>
+          <div class="unit-name">Shapes & Prepositions</div>
+          <div class="unit-desc">Şekiller ve Edatlar</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#ef4444">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#ef4444">Temel şekilleri İngilizce tanımak</div>
+        <div class="obj-item" style="--accent-color:#ef4444">in, on, under, between edatlarını öğrenmek</div>
+        <div class="obj-item" style="--accent-color:#ef4444">Nesnelerin şekillerini benzeterek anlatmak</div>
+      </div>
+
+      <div class="section-label" style="color:#ef4444">🔷 Şekiller</div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u7s">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Square</span></div><div class="flip-back"><span class="flip-emoji">🟥</span><span class="flip-tr">Kare</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Circle</span></div><div class="flip-back"><span class="flip-emoji">⭕</span><span class="flip-tr">Daire</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Rectangle</span></div><div class="flip-back"><span class="flip-emoji">▬</span><span class="flip-tr">Dikdörtgen</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Triangle</span></div><div class="flip-back"><span class="flip-emoji">🔺</span><span class="flip-tr">Üçgen</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Star</span></div><div class="flip-back"><span class="flip-emoji">⭐</span><span class="flip-tr">Yıldız</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Heart</span></div><div class="flip-back"><span class="flip-emoji">❤️</span><span class="flip-tr">Kalp</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Diamond</span></div><div class="flip-back"><span class="flip-emoji">💎</span><span class="flip-tr">Pırlanta şekli</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#ef4444">📍 Edatlar</div>
+      <div class="flip-grid u7p">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">In</span></div><div class="flip-back"><span class="flip-tr">İçinde</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">On</span></div><div class="flip-back"><span class="flip-tr">Üzerinde</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Under</span></div><div class="flip-back"><span class="flip-tr">Altında</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Between</span></div><div class="flip-back"><span class="flip-tr">Arasında</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#ef4444">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/lcl8uB2AWM0" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/lcl8uB2AWM0</div></div></a>
+        <a class="song-card" href="https://youtu.be/0B6Ge0FzHG0" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/0B6Ge0FzHG0</div></div></a>
+        <a class="song-card" href="https://youtu.be/g2jdZ46nK-M" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/g2jdZ46nK-M</div></div></a>
+        <a class="song-card" href="https://youtu.be/tUdcnQoqRDg" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/tUdcnQoqRDg</div></div></a>
+        <a class="song-card" href="https://youtu.be/AnoNb2OMQ6s" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 5</div><div class="song-url">youtu.be/AnoNb2OMQ6s</div></div></a>
+        <a class="song-card" href="https://youtu.be/DHb4-CCif7U" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 6</div><div class="song-url">youtu.be/DHb4-CCif7U</div></div></a>
+        <a class="song-card" href="https://youtu.be/QYerFOnPxu8" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 7</div><div class="song-url">youtu.be/QYerFOnPxu8</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         UNIT 8 – VEHICLES
+    ══════════════════════════════════════ -->
+    <section class="unit-section" id="u8" data-search="vehicles araçlar car bus train plane bike bicycle boat ship helicopter truck subway ambulance firetruck araba otobüs tren uçak bisiklet tekne gemi kamyon metro itfaiye">
+      <div class="unit-header uh8">
+        <div class="unit-emoji-big">🚗</div>
+        <div class="unit-header-text">
+          <div class="unit-no">Ünite 8</div>
+          <div class="unit-name">Vehicles</div>
+          <div class="unit-desc">Araçlar</div>
+        </div>
+      </div>
+
+      <div class="section-label" style="color:#16a34a">🎯 Neler Öğreniyoruz?</div>
+      <div class="obj-grid">
+        <div class="obj-item" style="--accent-color:#16a34a">Araçların İngilizce isimlerini öğrenmek</div>
+        <div class="obj-item" style="--accent-color:#16a34a">What is your favourite vehicle? sorusuna cevap vermek</div>
+        <div class="obj-item" style="--accent-color:#16a34a">Araçları bulmak ve hareketlerini taklit etmek</div>
+      </div>
+
+      <div class="section-label" style="color:#16a34a">📖 Kelimeler</div>
+      <div class="flip-tap-hint">👆 Karta tıkla → Türkçe'yi gör</div>
+      <div class="flip-grid u8">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Car</span></div><div class="flip-back"><span class="flip-emoji">🚗</span><span class="flip-tr">Araba</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Bus / School Bus</span></div><div class="flip-back"><span class="flip-emoji">🚌</span><span class="flip-tr">Otobüs / Okul otobüsü</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Train</span></div><div class="flip-back"><span class="flip-emoji">🚂</span><span class="flip-tr">Tren</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Plane / Airplane</span></div><div class="flip-back"><span class="flip-emoji">✈️</span><span class="flip-tr">Uçak</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Bike / Bicycle</span></div><div class="flip-back"><span class="flip-emoji">🚲</span><span class="flip-tr">Bisiklet</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Boat</span></div><div class="flip-back"><span class="flip-emoji">⛵</span><span class="flip-tr">Tekne</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Ship</span></div><div class="flip-back"><span class="flip-emoji">🚢</span><span class="flip-tr">Gemi</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Helicopter</span></div><div class="flip-back"><span class="flip-emoji">🚁</span><span class="flip-tr">Helikopter</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Truck</span></div><div class="flip-back"><span class="flip-emoji">🚛</span><span class="flip-tr">Kamyon</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Subway</span></div><div class="flip-back"><span class="flip-emoji">🚇</span><span class="flip-tr">Metro</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Ambulance</span></div><div class="flip-back"><span class="flip-emoji">🚑</span><span class="flip-tr">Ambulans</span></div></div></div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-front"><span class="flip-en">Fire Truck</span></div><div class="flip-back"><span class="flip-emoji">🚒</span><span class="flip-tr">İtfaiye</span></div></div></div>
+      </div>
+
+      <div class="section-label" style="color:#16a34a">🎵 Şarkılar</div>
+      <div class="songs-grid">
+        <a class="song-card" href="https://youtu.be/BdrZWu2dZ4c" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 1</div><div class="song-url">youtu.be/BdrZWu2dZ4c</div></div></a>
+        <a class="song-card" href="https://youtu.be/SWSbejC47hk" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 2</div><div class="song-url">youtu.be/SWSbejC47hk</div></div></a>
+        <a class="song-card" href="https://youtu.be/O3PoiNME29Q" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 3</div><div class="song-url">youtu.be/O3PoiNME29Q</div></div></a>
+        <a class="song-card" href="https://youtu.be/NYMzlJZjXFs" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 4</div><div class="song-url">youtu.be/NYMzlJZjXFs</div></div></a>
+        <a class="song-card" href="https://youtu.be/ACDZebcb2R0" target="_blank"><div class="song-play">▶️</div><div class="song-info"><div class="song-num">Şarkı 5</div><div class="song-url">youtu.be/ACDZebcb2R0</div></div></a>
+      </div>
+      <div class="note-strip"><span class="note-icon">💡</span>Evde öğrenilen şarkı ve kelimeleri çocuğunuza tekrar ettirirseniz harika katkı sağlarsınız!</div>
+    </section>
+
+    <div class="no-results" id="noResults">Hiç sonuç bulunamadı 🔍<br><small>Başka bir kelime dene!</small></div>
+
+  </main>
+</div>
+
+<script>
+/* ============================
+   SEARCH
+============================ */
+function doSearch() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const sections = document.querySelectorAll('.unit-section');
+  let anyVisible = false;
+  sections.forEach(s => {
+    const text = (s.dataset.search || '') + ' ' + s.innerText.toLowerCase();
+    if (!q || text.includes(q)) {
+      s.classList.remove('hidden');
+      anyVisible = true;
+    } else {
+      s.classList.add('hidden');
+    }
+  });
+  document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+}
+
+/* ============================
+   SCROLL REVEAL
+============================ */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.unit-section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
